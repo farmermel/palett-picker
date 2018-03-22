@@ -1,12 +1,15 @@
 language: node_js
 node_js:
-  - node
+- node
 services:
-  - postgresql
+- postgresql
 before_script:
-  - psql -c 'CREATE DATABASE palettepicker_test;' -U postgres
-  # if no before each in tests
-  # knex migrate:latest --env=test
-  # knex seed:run --env=test
-notifications: 
+- psql -c 'CREATE DATABASE palettepicker_test;' -U postgres
+notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: raSxj3kfWtJ4DYxaFHodBwLm6vXPuqtdFd9tfElzt2UgOUXy1j/nnm8aU7EGGHxZhSUAz09HjP/lXQB49nx/sgsy8/WgOKsKTgqxHX6FRmHnWDM+1FlN1No9q1fplB3CnEz35F/4u6tguDRAJgxHHAj8S+AALgMEfl7zR0oyZh9uNKrH0YWnKFxRT4RxbzNl9jiRrP0oY/Vz0ok/orhp2bV1dA1/Pma8Jd4i+9hM9szQc3n857oEVCUfKaadsa+34XVVwuCojlNTQ0OxlYW0Drf2RxMGjmXVVSuNc06sk3cuoLb00WCv3U1RxbztJhQY8Kp7IFL6Cb5r2EsdKMjmclWz3DyghGnLwj2sc/iS9cPhztt2XTWz6qBrB+q8vKk9p4ZLhXhtL8Y2fvNJJ6GsUOy644k4ugmc4WSVoXCcNhURIMl7Gf8VKfd9LQEbA7aEIYB0MBfVpLvve99YCwHJZTPewBc00it6xtbEN+rXjVM7KlcKZQ0Wjk3DyroaLaGBRzU1zqCoi7HROa1iv0oTGEuJJv37Lg07kMoHrcNfks7Sj7nKvS/a487gS/4Yo9+Ppq1TBIzHFty612a6tVUbgiyTFnVdWseF1rdOLvIlMdFSZYeVEgLWJWUn5mPwi+3E29y0X0LiD4pjNlZzpnbmo0AvE6stGXJFu/ulGeckM0I=
+  app: pwa-palette-lab-msuliteanu
+  skip_cleanup: true
