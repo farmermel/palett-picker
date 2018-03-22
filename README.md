@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/farmermel/palett-picker.svg?branch=master)](https://travis-ci.org/farmermel/palett-picker)
+
 # Palette Lab
 
 [Project Spec](http://frontend.turing.io/projects/palette-picker.html)
